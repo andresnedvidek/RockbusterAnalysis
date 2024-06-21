@@ -1,0 +1,26 @@
+SELECT AVG(total_amount_paid) AS average_amount_paid
+FROM(
+  SELECT B.customer_id,
+         B.first_name,
+         B.last_name,
+         E.counrty,
+         D.city,
+    COUNT (A.amount) AS total_amount_paid
+
+FROM payment A
+  INNER JOIN customer B ON A.customer_id = B.customer_id
+  INNER JOIN adress C ON B.adress_id = C.adress_id 
+  INNER JOIN city D ON C.city_id = D.city_id
+  INNER JOIN country E ON D.country_id = E.country_id
+
+WHERE counrty IN('India','China','United States','Japan','Mexico',
+                  'Brazil','Russian Federation','Philippines','Turky','Indonesia')
+
+  GROUP BY B.customer_id,
+          B.first_name,
+          B.last_name,
+          E.country,
+          D.city
+  ORDER BY total_amount_paid DESC
+  LIMIT 5
+) AS average;

@@ -24,7 +24,7 @@ Use SQL to query the data incrementally, answering increasingly complex business
 Visualize the results for easy consumption by Rockbuster management.
 
 # Data Set
-The data set includes information about Rockbuster’s film inventory, customers, and payments. It is approximately 3MB and consists of several files with relational tables. The first step is to load this data into PostgreSQL following the instructions provided.
+The data set includes information about Rockbuster’s film inventory, customers, and payments. 
 
 # Links
 Data Used: <a href="http://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip"> Link to Data
